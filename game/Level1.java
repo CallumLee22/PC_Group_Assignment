@@ -40,6 +40,17 @@ public class Level1 extends World
             addObject(tile, Greenfoot.getRandomNumber(750), Greenfoot.getRandomNumber(500));
         }
         
+        addObject(new DayWater(), 300, 500);
+        addObject(new DayWater(), 300, 470);
+        addObject(new DayWater(), 300, 440);
+        addObject(new DayWater(), 300, 410);
+        addObject(new DayWater(), 300, 380);
+        addObject(new DayWater(), 300, 350);
+        addObject(new DayWater(), 300, 320);
+        addObject(new DayWater(), 300, 290);
+        addObject(new DayWater(), 330, 290);
+        addObject(new DayWater(), 360, 290);
+        
         addObject(new DayHouse1(), 50, 300);
         addObject(new DayChurch(), 300, 78);
         addObject(new DayHouse2(), 589, 400);
@@ -56,7 +67,5 @@ public class Level1 extends World
         addObject(heart3, 80, 20);
         addObject(heart4, 110, 20);
         addObject(heart5, 140, 20);
-        
-        
     }
 }
