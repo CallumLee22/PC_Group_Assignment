@@ -20,24 +20,24 @@ public class Level1 extends World
         super(750, 500, 1);
         
         // Create green grass baseb for world to be built upon
-        for (int x = 1; x <= 750; x++)
+        for (int x = 1; x <= 750; x = x + 15)
         {
-            for (int y = 1; y <= 500; y++)
+            for (int y = 1; y <= 500; y = y + 15)
             {
-                addObject(new DayGrass(), x, y);
+                int ranNum = Greenfoot.getRandomNumber(100);
+                if (ranNum % 10 == 0)
+                {
+                    addObject(new DayGrassDetail3(), x, y);
+                }
+                else if(ranNum % 15 == 0)
+                {
+                    addObject(new DayGrassDetail5(), x, y);
+                }
+                else
+                {
+                    addObject(new DayGrass(), x, y);
+                }
             }
-        }
-        
-        // Add random grass details
-        for (int i = 0; i < 30; i++)
-        {
-            addObject(new DayGrassDetail3(), Greenfoot.getRandomNumber(750), Greenfoot.getRandomNumber(500));
-        }
-        
-        for (int i = 0; i < 30; i++)
-        {
-            DayGrassDetail2 tile = new DayGrassDetail2();
-            addObject(tile, Greenfoot.getRandomNumber(750), Greenfoot.getRandomNumber(500));
         }
         
         // Make river
@@ -65,7 +65,6 @@ public class Level1 extends World
         addObject(new DayWater(), 480, 50);
         addObject(new DayWater(), 480, 20);
         addObject(new DayWater(), 480, 0);
-        addObject(new DayBridge(), 480, 185);
         
         // Make pathway
         addObject(new DayGround(), 50, 350);
@@ -90,11 +89,40 @@ public class Level1 extends World
         addObject(new DayGroundDetail1(), 185, 320);
         addObject(new DayGround(), 185, 305);
         addObject(new DayGround(), 185, 290);
+        addObject(new DayGroundDetail3(), 185, 275);
+        addObject(new DayGround(), 185, 260);
+        addObject(new DayGroundDetail3(), 185, 245);
+        addObject(new DayGround(), 185, 230);
+        addObject(new DayGround(), 185, 215);
+        addObject(new DayGroundDetail2(), 185, 200);
+        addObject(new DayGroundDetail1(), 200, 200);
+        addObject(new DayGround(), 215, 200);
+        addObject(new DayGround(), 230, 200);
+        addObject(new DayGroundDetail4(), 245, 200);
+        addObject(new DayGround(), 260, 200);
+        addObject(new DayGround(), 275, 200);
+        addObject(new DayGroundDetail2(), 290, 200);
+        addObject(new DayGround(), 305, 200);
+        addObject(new DayGround(), 305, 185);
+        addObject(new DayGround(), 305, 170);
+        addObject(new DayGroundDetail5(), 305, 155);
+        addObject(new DayGroundDetail1(), 305, 140);
+        addObject(new DayGround(), 305, 125);
+        addObject(new DayGround(), 320, 200);
+        addObject(new DayGround(), 335, 200);
+        addObject(new DayGroundDetail2(), 350, 200);
+        addObject(new DayGround(), 365, 200);
+        addObject(new DayGroundDetail3(), 380, 200);
+        addObject(new DayGround(), 395, 200);
+        addObject(new DayGroundDetail5(), 410, 200);
+        addObject(new DayGroundDetail3(), 425, 200);
+        addObject(new DayGround(), 440, 200);
         
         // Spawn buildings
         addObject(new DayHouse1(), 50, 300);
-        addObject(new DayChurch(), 300, 78);
+        addObject(new DayChurch(), 305, 78);
         addObject(new DayHouse2(), 589, 400);
+        addObject(new DayBridge(), 480, 192);
         
         // Make different numbered hearts so that an individual heart can have image changed when damage is taken by the player
         Heart heart1 = new Heart();
