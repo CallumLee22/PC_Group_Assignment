@@ -41,30 +41,20 @@ public class Level1 extends World
         }
         
         // Make river
-        addObject(new DayWater(), 300, 500);
-        addObject(new DayWater(), 300, 470);
-        addObject(new DayWater(), 300, 440);
-        addObject(new DayWater(), 300, 410);
-        addObject(new DayWater(), 300, 380);
-        addObject(new DayWater(), 300, 350);
-        addObject(new DayWater(), 300, 320);
-        addObject(new DayWater(), 300, 290);
-        addObject(new DayWater(), 330, 290);
-        addObject(new DayWater(), 360, 290);
-        addObject(new DayWater(), 390, 290);
-        addObject(new DayWater(), 420, 290);
-        addObject(new DayWater(), 450, 290);
-        addObject(new DayWater(), 480, 290);
-        addObject(new DayWater(), 480, 260);
-        addObject(new DayWater(), 480, 230);
-        addObject(new DayWater(), 480, 200);
-        addObject(new DayWater(), 480, 170);
-        addObject(new DayWater(), 480, 140);
-        addObject(new DayWater(), 480, 110);
-        addObject(new DayWater(), 480, 80);
-        addObject(new DayWater(), 480, 50);
-        addObject(new DayWater(), 480, 20);
-        addObject(new DayWater(), 480, 0);
+        for (int y = 500; y >= 290; y -= 15)
+        {
+            addObject(new DayWater(), 300, y);
+        }
+        
+        for (int x = 330; x <= 480; x += 15)
+        {
+            addObject(new DayWater(), x, 290);
+        }
+        
+        for (int y = 260; y >= 0; y -= 15)
+        {
+            addObject(new DayWater(), 480, y);
+        }
         
         // Make pathway
         addObject(new DayGround(), 50, 350);
