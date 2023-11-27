@@ -45,74 +45,94 @@ public class Level1 extends World
         {
             addObject(new DayWater(), 300, y);
         }
-        
         for (int x = 330; x <= 480; x += 15)
         {
             addObject(new DayWater(), x, 290);
         }
-        
         for (int y = 260; y >= 0; y -= 15)
         {
             addObject(new DayWater(), 480, y);
         }
         
         // Make pathway
-        addObject(new DayGround(), 50, 350);
-        addObject(new DayGroundDetail1(), 50, 365);
-        addObject(new DayGround(), 50, 380);
-        addObject(new DayGround(), 50, 395);
-        addObject(new DayGroundDetail1(), 50, 410);
-        addObject(new DayGround(), 65, 410);
-        addObject(new DayGroundDetail3(), 80, 410);
-        addObject(new DayGround(), 95, 410);
-        addObject(new DayGroundDetail1(), 110, 410);
-        addObject(new DayGround(), 125, 410);
-        addObject(new DayGroundDetail3(), 140, 410);
-        addObject(new DayGround(), 155, 410);
-        addObject(new DayGroundDetail1(), 170, 410);
-        addObject(new DayGroundDetail2(), 185, 410);
-        addObject(new DayGroundDetail1(), 185, 395);
-        addObject(new DayGroundDetail1(), 185, 380);
-        addObject(new DayGround(), 185, 365);
-        addObject(new DayGroundDetail2(), 185, 350);
-        addObject(new DayGround(), 185, 335);
-        addObject(new DayGroundDetail1(), 185, 320);
-        addObject(new DayGround(), 185, 305);
-        addObject(new DayGround(), 185, 290);
-        addObject(new DayGroundDetail3(), 185, 275);
-        addObject(new DayGround(), 185, 260);
-        addObject(new DayGroundDetail3(), 185, 245);
-        addObject(new DayGround(), 185, 230);
-        addObject(new DayGround(), 185, 215);
-        addObject(new DayGroundDetail2(), 185, 200);
-        addObject(new DayGroundDetail1(), 200, 200);
-        addObject(new DayGround(), 215, 200);
-        addObject(new DayGround(), 230, 200);
-        addObject(new DayGroundDetail4(), 245, 200);
-        addObject(new DayGround(), 260, 200);
-        addObject(new DayGround(), 275, 200);
-        addObject(new DayGroundDetail2(), 290, 200);
-        addObject(new DayGround(), 305, 200);
-        addObject(new DayGround(), 305, 185);
-        addObject(new DayGround(), 305, 170);
-        addObject(new DayGroundDetail5(), 305, 155);
-        addObject(new DayGroundDetail1(), 305, 140);
-        addObject(new DayGround(), 305, 125);
-        addObject(new DayGround(), 320, 200);
-        addObject(new DayGround(), 335, 200);
-        addObject(new DayGroundDetail2(), 350, 200);
-        addObject(new DayGround(), 365, 200);
-        addObject(new DayGroundDetail3(), 380, 200);
-        addObject(new DayGround(), 395, 200);
-        addObject(new DayGroundDetail5(), 410, 200);
-        addObject(new DayGroundDetail3(), 425, 200);
-        addObject(new DayGround(), 440, 200);
+        for (int y = 350; y <= 410; y += 15)
+        {
+            addObject(new DayGround(), 50, y);
+        }
+        for (int x = 65; x <= 185; x += 15)
+        {
+            addObject(new DayGround(), x, 410);
+        }
+        for (int y = 395; y >= 200; y -= 15)
+        {
+            addObject(new DayGround(), 185, y);            
+        }
+        for (int x = 200; x <= 305; x += 15)
+        {
+            addObject(new DayGround(), x, 200);
+        }
+        for (int y = 185; y >= 125; y -= 15)
+        {
+            addObject(new DayGround(), 305, y);            
+        }
+        for (int x = 320; x <= 440; x += 15)
+        {
+            addObject(new DayGround(), x, 200);
+        }
+        for (int x = 530; x <= 590; x += 15)
+        {
+            addObject(new DayGround(), x, 200);
+        }
+        for (int y = 215; y <= 335; y += 15)
+        {
+            addObject(new DayGround(), 590, y);
+        }
+        for (int x = 575; x >= 425; x -= 15)
+        {
+            addObject(new DayGround(), x, 335);
+        }
+        for (int y = 350; y <= 455; y += 15)
+        {
+            addObject(new DayGround(), 425, y);
+        }
+        addObject(new DayGround(), 425, 467);
+        for (int x = 440; x <= 575; x += 15)
+        {
+            addObject(new DayGround(), x, 467);
+        }
+        addObject(new DayGround(), 575, 455);
         
-        // Spawn buildings
+        // Spawn fences
+        addObject(new DayFence1(0), 6, 300);
+        for (int x = 95; x <= 275; x += 15)
+        {
+            if ( x != 185)
+            {
+                addObject(new DayFence1(0), x, 300);   
+            }
+        }
+        for (int x = 660; x <= 735; x += 15)
+        {
+            addObject(new DayFence1(0), x, 400);
+        }
+        for (int x = 540; x >= 495; x -= 15)
+        {
+            addObject(new DayFence1(0), x, 400);
+        }
+        for (int y = 405; y <= 495; y += 15)
+        {
+            if (y != 465)
+            {
+                addObject(new DayFence1(270), 480, y);
+            }
+        }
+        
+        // Spawn POIs
         addObject(new DayHouse1(), 50, 300);
         addObject(new DayChurch(), 305, 78);
-        addObject(new DayHouse2(), 589, 400);
+        addObject(new DayHouse2(), 600, 400);
         addObject(new DayBridge(), 480, 192);
+        addObject(new DayPit(), 650, 100);
         
         // Make different numbered hearts so that an individual heart can have image changed when damage is taken by the player
         Heart heart1 = new Heart();
