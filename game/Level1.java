@@ -57,50 +57,50 @@ public class Level1 extends World
         // Make pathway
         for (int y = 350; y <= 410; y += 15)
         {
-            addObject(new DayGround(), 50, y);
+            getRandomGround(50, y);
         }
         for (int x = 65; x <= 185; x += 15)
         {
-            addObject(new DayGround(), x, 410);
+            getRandomGround(x, 410);
         }
         for (int y = 395; y >= 200; y -= 15)
         {
-            addObject(new DayGround(), 185, y);            
+            getRandomGround(185, y);            
         }
         for (int x = 200; x <= 305; x += 15)
         {
-            addObject(new DayGround(), x, 200);
+            getRandomGround(x, 200);
         }
         for (int y = 185; y >= 125; y -= 15)
         {
-            addObject(new DayGround(), 305, y);            
+            getRandomGround(305, y);            
         }
         for (int x = 320; x <= 440; x += 15)
         {
-            addObject(new DayGround(), x, 200);
+            getRandomGround(x, 200);
         }
         for (int x = 530; x <= 590; x += 15)
         {
-            addObject(new DayGround(), x, 200);
+            getRandomGround(x, 200);
         }
         for (int y = 215; y <= 335; y += 15)
         {
-            addObject(new DayGround(), 590, y);
+            getRandomGround(590, y);
         }
         for (int x = 575; x >= 425; x -= 15)
         {
-            addObject(new DayGround(), x, 335);
+            getRandomGround(x, 335);
         }
         for (int y = 350; y <= 455; y += 15)
         {
-            addObject(new DayGround(), 425, y);
+            getRandomGround(425, y);
         }
-        addObject(new DayGround(), 425, 467);
+        getRandomGround(425, 467);
         for (int x = 440; x <= 575; x += 15)
         {
-            addObject(new DayGround(), x, 467);
+            getRandomGround(x, 467);
         }
-        addObject(new DayGround(), 575, 455);
+        getRandomGround(575, 455);
         
         // Spawn fences
         addObject(new DayFence1(0), 6, 300);
@@ -146,5 +146,42 @@ public class Level1 extends World
         addObject(heart3, 80, 20);
         addObject(heart4, 110, 20);
         addObject(heart5, 140, 20);
+    }
+    
+    private void getRandomGround(int x, int y)
+    {
+        int randNum = Greenfoot.getRandomNumber(100);
+        
+        if (randNum % 3 == 0)
+        {
+            addObject(new DayGround(), x, y);
+        }
+        else if (randNum % 12 == 0)
+        {
+            addObject(new DayGroundDetail2(), x, y);
+        }
+        else if (randNum % 15 == 0)
+        {
+            addObject(new DayGroundDetail3(), x, y);
+        }
+        else if (randNum % 10 == 0)
+        {
+            addObject(new DayGroundDetail4(), x, y);
+        }
+        else if (randNum % 20 == 0)
+        {
+            addObject(new DayGroundDetail5(), x, y);
+        }
+        else
+        {
+            if (randNum % 2 == 0)
+            {
+                addObject(new DayGroundDetail1(), x, y);   
+            }
+            else
+            {
+                addObject(new DayGroundDetail3(), x, y);
+            }
+        }
     }
 }
