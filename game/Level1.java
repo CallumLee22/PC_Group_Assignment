@@ -8,18 +8,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Level1 extends World
 {
-
     /**
      * Constructor for objects of class Level1.
      * 
      */
     
     public Level1()
-    {    
+    {
         // Create a new world with 750x500 cells with a cell size of 1x1 pixels.
         super(750, 500, 1);
         
-        // Create green grass baseb for world to be built upon
+        // Create grass base for world to be built upon
         for (int x = 1; x <= 750; x = x + 15)
         {
             for (int y = 1; y <= 500; y = y + 15)
