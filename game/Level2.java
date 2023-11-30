@@ -1,12 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Level1 here.
+ * Write a description of class Level2 here.
  * 
- * @author Callum Lee 
- * @version 24/11/2023
+ * @author (your name) 
+ * @version (a version number or a date)
  */
-public class Level1 extends World
+public class Level2 extends World
 {
 
     /**
@@ -14,7 +14,7 @@ public class Level1 extends World
      * 
      */
     
-    public Level1()
+    public Level2()
     {    
         // Create a new world with 750x500 cells with a cell size of 1x1 pixels.
         super(750, 500, 1);
@@ -27,15 +27,15 @@ public class Level1 extends World
                 int ranNum = Greenfoot.getRandomNumber(100);
                 if (ranNum % 10 == 0)
                 {
-                    addObject(new DayGrassDetail3(), x, y);
+                    addObject(new NightGrassDetail3(), x, y);
                 }
                 else if(ranNum % 15 == 0)
                 {
-                    addObject(new DayGrassDetail5(), x, y);
+                    addObject(new NightGrassDetail5(), x, y);
                 }
                 else
                 {
-                    addObject(new DayGrass(), x, y);
+                    addObject(new NightGrass(), x, y);
                 }
             }
         }
@@ -43,15 +43,15 @@ public class Level1 extends World
         // Make river
         for (int y = 500; y >= 290; y -= 15)
         {
-            addObject(new DayWater(), 300, y);
+            addObject(new NightWater(), 300, y);
         }
         for (int x = 330; x <= 480; x += 15)
         {
-            addObject(new DayWater(), x, 290);
+            addObject(new NightWater(), x, 290);
         }
         for (int y = 260; y >= 0; y -= 15)
         {
-            addObject(new DayWater(), 480, y);
+            addObject(new NightWater(), 480, y);
         }
         
         // Make pathway
@@ -111,36 +111,36 @@ public class Level1 extends World
         }
         
         // Spawn fences
-        addObject(new DayFence1(0), 6, 300);
+        addObject(new NightFence1(0), 6, 300);
         for (int x = 95; x <= 275; x += 15)
         {
             if ( x != 185)
             {
-                addObject(new DayFence1(0), x, 300);   
+                addObject(new NightFence1(0), x, 300);   
             }
         }
         for (int x = 660; x <= 735; x += 15)
         {
-            addObject(new DayFence1(0), x, 400);
+            addObject(new NightFence1(0), x, 400);
         }
         for (int x = 540; x >= 495; x -= 15)
         {
-            addObject(new DayFence1(0), x, 400);
+            addObject(new NightFence1(0), x, 400);
         }
         for (int y = 405; y <= 495; y += 15)
         {
             if (y != 465)
             {
-                addObject(new DayFence1(270), 480, y);
+                addObject(new NightFence1(270), 480, y);
             }
         }
         
         // Spawn POIs
-        addObject(new DayHouse1(), 50, 300);
-        addObject(new DayChurch(), 305, 78);
-        addObject(new DayHouse2(), 600, 400);
-        addObject(new DayBridge(), 480, 192);
-        addObject(new DayPit(), 650, 100);
+        addObject(new NightHouse1(), 50, 300);
+        addObject(new NightChurch(), 305, 78);
+        addObject(new NightHouse2(), 600, 400);
+        addObject(new NightBridge(), 480, 192);
+        addObject(new NightPit(), 650, 100);
         
         // Make different numbered hearts so that an individual heart can have image changed when damage is taken by the player
         Heart heart1 = new Heart();
@@ -162,33 +162,33 @@ public class Level1 extends World
         
         if (randNum % 3 == 0)
         {
-            addObject(new DayGround(), x, y);
+            addObject(new NightGround(), x, y);
         }
         else if (randNum % 12 == 0)
         {
-            addObject(new DayGroundDetail2(), x, y);
+            addObject(new NightGroundDetail2(), x, y);
         }
         else if (randNum % 15 == 0)
         {
-            addObject(new DayGroundDetail3(), x, y);
+            addObject(new NightGroundDetail3(), x, y);
         }
         else if (randNum % 10 == 0)
         {
-            addObject(new DayGroundDetail4(), x, y);
+            addObject(new NightGroundDetail4(), x, y);
         }
         else if (randNum % 20 == 0)
         {
-            addObject(new DayGroundDetail5(), x, y);
+            addObject(new NightGroundDetail5(), x, y);
         }
         else
         {
             if (randNum % 2 == 0)
             {
-                addObject(new DayGroundDetail1(), x, y);   
+                addObject(new NightGroundDetail1(), x, y);   
             }
             else
             {
-                addObject(new DayGroundDetail3(), x, y);
+                addObject(new NightGroundDetail3(), x, y);
             }
         }
     }
