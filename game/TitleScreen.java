@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class TitleScreen extends World
 {
-
     /**
      * Constructor for objects of class TitleScreen.
      * 
@@ -18,7 +17,7 @@ public class TitleScreen extends World
         // Create a new world with 750x500 cells with a cell size of 1x1 pixels.
         super(750, 500, 1);
         
-        // Create green grass base for world to be built upon
+        // Create green grass base as a background for the title screen
         for (int x = 1; x <= 750; x = x + 15)
         {
             for (int y = 1; y <= 500; y = y + 15)
@@ -38,6 +37,14 @@ public class TitleScreen extends World
                 }
             }
         }
+        
+        // Make text box for title
+        DayTextBox textBox = new DayTextBox();
+        GreenfootImage image = textBox.getImage();
+        image.scale(image.getWidth() / 5, image.getHeight() / 6); 
+        textBox.setImage(image);
+        textBox.getImage().drawImage(new GreenfootImage("Zombie Villager", 64, Color.WHITE, null), 100, 40);
+        addObject(textBox, 375, 150);
         
         // Add start button
         StartButton startButton = new StartButton();
