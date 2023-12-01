@@ -1,15 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class DayGrassDetail3 here.
+ * Write a description of class DayTextBox here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class DayGrassDetail3 extends Actor
+public class DayTextBox extends Actor
 {
     /**
-     * Act - do whatever the DayGrassDetail3 wants to do. This method is called whenever
+     * Act - do whatever the DayTextBox wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()

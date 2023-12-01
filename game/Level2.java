@@ -19,7 +19,7 @@ public class Level2 extends World
         // Create a new world with 750x500 cells with a cell size of 1x1 pixels.
         super(750, 500, 1);
         
-        // Create green grass baseb for world to be built upon
+        // Create grass base for world to be built upon
         for (int x = 1; x <= 750; x = x + 15)
         {
             for (int y = 1; y <= 500; y = y + 15)
@@ -144,10 +144,30 @@ public class Level2 extends World
         
         // Make different numbered hearts so that an individual heart can have image changed when damage is taken by the player
         Heart heart1 = new Heart();
+        GreenfootImage heart1Image = heart1.getImage();
+        heart1Image.scale(heart1Image.getWidth() * 2, heart1Image.getHeight() * 2);
+        heart1.setImage(heart1Image);
+        
         Heart heart2 = new Heart();
+        GreenfootImage heart2Image = heart2.getImage();
+        heart2Image.scale(heart2Image.getWidth() * 2, heart2Image.getHeight() * 2);
+        heart2.setImage(heart2Image);
+        
         Heart heart3 = new Heart();
+        GreenfootImage heart3Image = heart3.getImage();
+        heart3Image.scale(heart3Image.getWidth() * 2, heart3Image.getHeight() * 2);
+        heart3.setImage(heart3Image);
+        
         Heart heart4 = new Heart();
+        GreenfootImage heart4Image = heart4.getImage();
+        heart4Image.scale(heart4Image.getWidth() * 2, heart4Image.getHeight() * 2);
+        heart4.setImage(heart4Image);
+        
         Heart heart5 = new Heart();
+        GreenfootImage heart5Image = heart5.getImage();
+        heart5Image.scale(heart5Image.getWidth() * 2, heart5Image.getHeight() * 2);
+        heart5.setImage(heart5Image);
+        
         
         addObject(heart1, 20, 20);
         addObject(heart2, 50, 20);

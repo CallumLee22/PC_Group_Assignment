@@ -13,14 +13,6 @@ public class Heart extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-    // Constructor to resize image before program has run
-    public Heart()
-    {
-        GreenfootImage image = getImage();
-        image.scale(image.getWidth() * 2, image.getHeight() * 2);
-        setImage(image);
-    }
-    
     public void act()
     {
         
