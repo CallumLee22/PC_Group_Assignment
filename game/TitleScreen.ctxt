@@ -1,10 +1,6 @@
 #BlueJ class context
 comment0.target=TitleScreen
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ TitleScreen\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Displays\ the\ title\ screen\ and\ character\ select\ screen\r\n\ \r\n\ @Callum\ Lee\r\n\ @5/12/23\r\n
 comment1.params=
 comment1.target=TitleScreen()
-comment2.params=
-comment2.target=void\ act()
-comment3.params=
-comment3.target=void\ characterSelect()
-numComments=4
+numComments=2

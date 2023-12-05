@@ -27,8 +27,9 @@ public class DayTextBox extends Actor
         }
         else if (purpose == "character")
         {
+            this.setImage("HUD Square Box Blue - Day.png");
             GreenfootImage boxImage = this.getImage();
-            boxImage.scale(boxImage.getWidth() / 23, boxImage.getHeight() / 7);
+            boxImage.scale(boxImage.getWidth() / 7, boxImage.getHeight() / 7);
             this.setImage(boxImage);
         }
     }
@@ -36,5 +37,10 @@ public class DayTextBox extends Actor
     public void act()
     {
         // Add your action code here.
+    }
+    
+    public static void characterSelection(int character)
+    {
+        Greenfoot.setWorld(new Level1());
     }
 }
