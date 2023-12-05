@@ -22,6 +22,5 @@ public class StartButton extends Actor
     
     public void act()
     {
-        
     }
 }
