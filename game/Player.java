@@ -17,14 +17,10 @@ public class Player extends Actor
     // Set speed
     private int speed = 2;
     
-    // Keep track of position
-    public int xPos;
-    public int yPos;
-    
     public Player(int characterNum)
     {
+        // Get the chosen character and set that as the image
         this.characterNum = characterNum;
-        
         this.setImage(characterNum + " - forward facing.png");
         
     }
@@ -36,20 +32,19 @@ public class Player extends Actor
     
     private void move()
     {
+        // Get current position of player
         int x = getX();
         int y = getY();
         
+        // Move the player from key pressed
         if (Greenfoot.isKeyDown("down"))
         {
             y += speed;
             setLocation(x, y);
-            if (!isTouching(DayBridge.class))
+            if (hitObstacles())
             {
-                if (hitObstacles())
-                {
-                    y -= speed;
-                    setLocation(x, y);  
-                }
+                y -= speed;
+                setLocation(x, y);  
             }
         }
         
@@ -57,13 +52,10 @@ public class Player extends Actor
         {
             y -= speed;
             setLocation(x, y);
-            if (!isTouching(DayBridge.class))
+            if (hitObstacles())
             {
-                if (hitObstacles())
-                {
-                    y += speed;
-                    setLocation(x, y);
-                }
+                y += speed;
+                setLocation(x, y);
             }
         }
         
@@ -71,13 +63,10 @@ public class Player extends Actor
         {
             x += speed;
             setLocation(x, y);
-            if (!isTouching(DayBridge.class))
+            if (hitObstacles())
             {
-                if (hitObstacles())
-                {
-                    x -= speed;
-                    setLocation(x , y);
-                }
+                x -= speed;
+                setLocation(x , y);
             }
         }
         
@@ -85,20 +74,23 @@ public class Player extends Actor
         {
             x -= speed;
             setLocation(x, y);
-            if (!isTouching(DayBridge.class))
+            if (hitObstacles())
             {
-                if (hitObstacles())
-                {
-                    x += speed;
-                    setLocation(x, y);
-                }
+                x += speed;
+                setLocation(x, y);
             }
         }
     }
     
     private boolean hitObstacles()
     {
-        if (isTouching(DayWater.class) || isTouching(NightWater.class) || isTouching(DayFence1.class))
+        // Check is player hits an object that blocks movement
+        // Allow player to walk over the bridges
+        if (isTouching(DayBridge.class) || isTouching(NightBridge.class))
+        {
+            return false;
+        }
+        else if (isTouching(DayWater.class) || isTouching(NightWater.class) || isTouching(DayFence1.class) || isTouching(NightFence1.class))
         {
             return true;
         }

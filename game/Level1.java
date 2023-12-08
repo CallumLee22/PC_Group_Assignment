@@ -19,6 +19,7 @@ public class Level1 extends World
         // Create a new world with 750x500 cells with a cell size of 1x1 pixels.
         super(750, 500, 1);
         
+        // Get character chosen
         this.characterNum = characterNum;
         
         // Create grass base for world to be built upon
@@ -182,6 +183,7 @@ public class Level1 extends World
     
     private void getRandomGround(int x, int y)
     {
+        // Get random ground textures to make world more varied
         int randNum = Greenfoot.getRandomNumber(100);
         
         if (randNum % 3 == 0)

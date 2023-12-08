@@ -41,6 +41,7 @@ public class CharacterSelect extends World
             }
         }
         
+        // Get title text box
         DayTextBox textBox = new DayTextBox("title");
         textBox.getImage().drawImage(new GreenfootImage("Select Your Character", 64, Color.WHITE, null), 30, 40);
         addObject(textBox, 375, 85);
@@ -55,6 +56,7 @@ public class CharacterSelect extends World
             }
         }
         
+        // Create array list to store buttons to select character
         ArrayList<DayTextBox> boxes = new ArrayList<DayTextBox>();
         for (int i = 0; i <=3; i++)
         {
@@ -70,7 +72,7 @@ public class CharacterSelect extends World
         DayTextBox char3 = boxes.get(2);
         DayTextBox char4 = boxes.get(3);
 
-        
+        // Add character options to the screen
         addObject(char1, 250, 250);
         addObject(char2, 500, 250);
         addObject(char3, 250, 400);
