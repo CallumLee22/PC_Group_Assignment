@@ -22,9 +22,9 @@ public class Level1 extends World
         this.characterNum = characterNum;
         
         // Create grass base for world to be built upon
-        for (int x = 1; x <= 750; x = x + 15)
+        for (int x = 0; x <= 750; x = x + 15)
         {
-            for (int y = 1; y <= 500; y = y + 15)
+            for (int y = 0; y <= 500; y = y + 15)
             {
                 int ranNum = Greenfoot.getRandomNumber(100);
                 if (ranNum % 10 == 0)
@@ -107,7 +107,7 @@ public class Level1 extends World
         {
             getRandomGround(590, y);
         }
-        for (int x = 605; x <= 750; x += 15)
+        for (int x = 605; x < 740; x += 15)
         {
             getRandomGround(x, 65);
         }
