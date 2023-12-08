@@ -12,11 +12,14 @@ public class Level1 extends World
      * Constructor for objects of class Level1.
      * 
      */
+    int characterNum;
     
-    public Level1()
+    public Level1(int characterNum)
     {
         // Create a new world with 750x500 cells with a cell size of 1x1 pixels.
         super(750, 500, 1);
+        
+        this.characterNum = characterNum;
         
         // Create grass base for world to be built upon
         for (int x = 1; x <= 750; x = x + 15)
@@ -140,6 +143,9 @@ public class Level1 extends World
         addObject(new DayHouse2(), 600, 400);
         addObject(new DayBridge(), 480, 192);
         addObject(new DayPit(), 650, 100);
+        
+        // Spawn player
+        addObject(new Player(characterNum), 50, 350);
         
         // Make different numbered hearts so that an individual heart can have image changed when damage is taken by the player
         Heart heart1 = new Heart();

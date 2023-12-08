@@ -1,10 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.ArrayList;
 
 /**
- * Write a description of class TitleScreen here.
+ * Displays the title screen and character select screen
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Callum Lee
+ * @5/12/23
  */
 public class TitleScreen extends World
 {
@@ -12,6 +13,9 @@ public class TitleScreen extends World
      * Constructor for objects of class TitleScreen.
      * 
      */
+    private StartButton startButton = new StartButton();
+    private DayTextBox textBox = new DayTextBox("title");
+    
     public TitleScreen()
     {    
         // Create a new world with 750x500 cells with a cell size of 1x1 pixels.
@@ -39,15 +43,10 @@ public class TitleScreen extends World
         }
         
         // Make text box for title
-        DayTextBox textBox = new DayTextBox();
-        GreenfootImage image = textBox.getImage();
-        image.scale(image.getWidth() / 5, image.getHeight() / 6); 
-        textBox.setImage(image);
         textBox.getImage().drawImage(new GreenfootImage("Zombie Villager", 64, Color.WHITE, null), 100, 40);
         addObject(textBox, 375, 150);
         
         // Add start button
-        StartButton startButton = new StartButton();
         addObject(startButton, 375, 400);
     }
 }
