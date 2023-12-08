@@ -41,6 +41,6 @@ public class DayTextBox extends Actor
     
     public static void characterSelection(int character)
     {
-        Greenfoot.setWorld(new Level1());
+        Greenfoot.setWorld(new Level1(character));
     }
 }
