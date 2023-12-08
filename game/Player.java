@@ -39,25 +39,72 @@ public class Player extends Actor
         int x = getX();
         int y = getY();
         
-            if (Greenfoot.isKeyDown("down") && y > speed)
+        if (Greenfoot.isKeyDown("down"))
         {
             y += speed;
+            setLocation(x, y);
+            if (!isTouching(DayBridge.class))
+            {
+                if (hitObstacles())
+                {
+                    y -= speed;
+                    setLocation(x, y);  
+                }
+            }
         }
         
-        if (Greenfoot.isKeyDown("up") && y > speed)
+        if (Greenfoot.isKeyDown("up"))
         {
             y -= speed;
+            setLocation(x, y);
+            if (!isTouching(DayBridge.class))
+            {
+                if (hitObstacles())
+                {
+                    y += speed;
+                    setLocation(x, y);
+                }
+            }
         }
         
-        if (Greenfoot.isKeyDown("right") && x > speed)
+        if (Greenfoot.isKeyDown("right"))
         {
             x += speed;
+            setLocation(x, y);
+            if (!isTouching(DayBridge.class))
+            {
+                if (hitObstacles())
+                {
+                    x -= speed;
+                    setLocation(x , y);
+                }
+            }
         }
         
-        if (Greenfoot.isKeyDown("left") && x > speed)
+        if (Greenfoot.isKeyDown("left"))
         {
             x -= speed;
+            setLocation(x, y);
+            if (!isTouching(DayBridge.class))
+            {
+                if (hitObstacles())
+                {
+                    x += speed;
+                    setLocation(x, y);
+                }
+            }
         }
-        setLocation(x, y);
+    }
+    
+    private boolean hitObstacles()
+    {
+        if (isTouching(DayWater.class) || isTouching(NightWater.class) || isTouching(DayFence1.class))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

@@ -116,7 +116,7 @@ public class Level1 extends World
         addObject(new DayFence1(0), 6, 300);
         for (int x = 95; x <= 275; x += 15)
         {
-            if ( x != 185)
+            if ( x != 185 && x != 170 && x != 200)
             {
                 addObject(new DayFence1(0), x, 300);   
             }
@@ -131,7 +131,7 @@ public class Level1 extends World
         }
         for (int y = 405; y <= 495; y += 15)
         {
-            if (y != 465)
+            if (y != 465 && y != 480 && y != 450)
             {
                 addObject(new DayFence1(270), 480, y);
             }
