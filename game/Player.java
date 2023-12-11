@@ -39,6 +39,7 @@ public class Player extends Actor
         // Move the player from key pressed
         if (Greenfoot.isKeyDown("down"))
         {
+            this.setImage(characterNum + " - forward facing.png");
             y += speed;
             setLocation(x, y);
             if (hitObstacles())
@@ -50,6 +51,7 @@ public class Player extends Actor
         
         if (Greenfoot.isKeyDown("up"))
         {
+            this.setImage(characterNum + " - rear facing_still.png");
             y -= speed;
             setLocation(x, y);
             if (hitObstacles())
@@ -61,17 +63,19 @@ public class Player extends Actor
         
         if (Greenfoot.isKeyDown("right"))
         {
+            this.setImage(characterNum + " - right facing.png");
             x += speed;
             setLocation(x, y);
             if (hitObstacles())
             {
                 x -= speed;
-                setLocation(x , y);
+                setLocation(x, y);
             }
         }
         
         if (Greenfoot.isKeyDown("left"))
         {
+            this.setImage(characterNum + " - left facing.png");
             x -= speed;
             setLocation(x, y);
             if (hitObstacles())
