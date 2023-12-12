@@ -21,9 +21,9 @@ public class CharacterSelect extends World
         super(750, 500, 1);
         
         // Create green grass base as a background for the character selection
-        for (int x = 1; x <= 750; x = x + 15)
+        for (int x = 0; x <= 750; x += 15)
         {
-            for (int y = 1; y <= 500; y = y + 15)
+            for (int y = 0; y <= 500; y += 15)
             {
                 int ranNum = Greenfoot.getRandomNumber(100);
                 if (ranNum % 10 == 0)
@@ -41,6 +41,7 @@ public class CharacterSelect extends World
             }
         }
         
+        // Get title text box
         DayTextBox textBox = new DayTextBox("title");
         textBox.getImage().drawImage(new GreenfootImage("Select Your Character", 64, Color.WHITE, null), 30, 40);
         addObject(textBox, 375, 85);
@@ -55,6 +56,7 @@ public class CharacterSelect extends World
             }
         }
         
+        // Create array list to store buttons to select character
         ArrayList<DayTextBox> boxes = new ArrayList<DayTextBox>();
         for (int i = 0; i <=3; i++)
         {
@@ -70,7 +72,7 @@ public class CharacterSelect extends World
         DayTextBox char3 = boxes.get(2);
         DayTextBox char4 = boxes.get(3);
 
-        
+        // Add character options to the screen
         addObject(char1, 250, 250);
         addObject(char2, 500, 250);
         addObject(char3, 250, 400);

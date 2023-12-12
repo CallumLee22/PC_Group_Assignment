@@ -19,12 +19,16 @@ public class Level1 extends World
         // Create a new world with 750x500 cells with a cell size of 1x1 pixels.
         super(750, 500, 1);
         
+        // Get character chosen
         this.characterNum = characterNum;
         
+        // Pit "invisible barrier"
+        addObject(new DayWater(), 650, 100);
+        
         // Create grass base for world to be built upon
-        for (int x = 1; x <= 750; x = x + 15)
+        for (int x = 0; x <= 750; x = x + 15)
         {
-            for (int y = 1; y <= 500; y = y + 15)
+            for (int y = 0; y <= 500; y = y + 15)
             {
                 int ranNum = Greenfoot.getRandomNumber(100);
                 if (ranNum % 10 == 0)
@@ -43,15 +47,15 @@ public class Level1 extends World
         }
         
         // Make river
-        for (int y = 500; y >= 290; y -= 15)
+        for (int y = 500; y >= 290; y -= 30)
         {
             addObject(new DayWater(), 300, y);
         }
-        for (int x = 330; x <= 480; x += 15)
+        for (int x = 330; x <= 450; x += 30)
         {
             addObject(new DayWater(), x, 290);
         }
-        for (int y = 260; y >= 0; y -= 15)
+        for (int y = 290; y >= -10; y -= 30)
         {
             addObject(new DayWater(), 480, y);
         }
@@ -107,7 +111,7 @@ public class Level1 extends World
         {
             getRandomGround(590, y);
         }
-        for (int x = 605; x <= 750; x += 15)
+        for (int x = 605; x < 740; x += 15)
         {
             getRandomGround(x, 65);
         }
@@ -116,7 +120,7 @@ public class Level1 extends World
         addObject(new DayFence1(0), 6, 300);
         for (int x = 95; x <= 275; x += 15)
         {
-            if ( x != 185)
+            if ( x != 185 && x != 170 && x != 200)
             {
                 addObject(new DayFence1(0), x, 300);   
             }
@@ -131,11 +135,36 @@ public class Level1 extends World
         }
         for (int y = 405; y <= 495; y += 15)
         {
-            if (y != 465)
+            if (y != 465 && y != 480 && y != 450)
             {
                 addObject(new DayFence1(270), 480, y);
             }
         }
+
+        //Church "invisible barriers"
+        addObject(new DayWater(), 305, 78);
+        addObject(new DayWater(), 305, 90);
+        addObject(new DayWater(), 270, 78);
+        addObject(new DayWater(), 340, 78);
+        addObject(new DayWater(), 305, 58);
+        addObject(new DayWater(), 300, 65);
+        addObject(new DayWater(), 310, 65);
+        
+        // Blue house "invisible barriers"
+        addObject(new DayWater(), 50, 277);
+        addObject(new DayWater(), 50, 307);
+        addObject(new DayWater(), 50, 285);
+        addObject(new DayWater(), 35, 300);
+        addObject(new DayWater(), 65, 300);
+        
+        // Yellow house "invisible barriers"
+        addObject(new DayWater(), 600, 400);
+        addObject(new DayWater(), 570, 400);
+        addObject(new DayWater(), 630, 400);
+        addObject(new DayWater(), 570, 410);
+        addObject(new DayWater(), 585, 410);
+        addObject(new DayWater(), 570, 385);
+        addObject(new DayWater(), 590, 389);
         
         // Spawn POIs
         addObject(new DayHouse1(), 50, 300);
@@ -182,6 +211,7 @@ public class Level1 extends World
     
     private void getRandomGround(int x, int y)
     {
+        // Get random ground textures to make world more varied
         int randNum = Greenfoot.getRandomNumber(100);
         
         if (randNum % 3 == 0)
