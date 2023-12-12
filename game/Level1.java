@@ -22,6 +22,9 @@ public class Level1 extends World
         // Get character chosen
         this.characterNum = characterNum;
         
+        // Pit "invisible barrier"
+        addObject(new DayWater(), 650, 100);
+        
         // Create grass base for world to be built upon
         for (int x = 0; x <= 750; x = x + 15)
         {
@@ -44,15 +47,15 @@ public class Level1 extends World
         }
         
         // Make river
-        for (int y = 500; y >= 290; y -= 15)
+        for (int y = 500; y >= 290; y -= 30)
         {
             addObject(new DayWater(), 300, y);
         }
-        for (int x = 330; x <= 480; x += 15)
+        for (int x = 330; x <= 450; x += 30)
         {
             addObject(new DayWater(), x, 290);
         }
-        for (int y = 260; y >= 0; y -= 15)
+        for (int y = 290; y >= -10; y -= 30)
         {
             addObject(new DayWater(), 480, y);
         }
@@ -137,6 +140,31 @@ public class Level1 extends World
                 addObject(new DayFence1(270), 480, y);
             }
         }
+
+        //Church "invisible barriers"
+        addObject(new DayWater(), 305, 78);
+        addObject(new DayWater(), 305, 90);
+        addObject(new DayWater(), 270, 78);
+        addObject(new DayWater(), 340, 78);
+        addObject(new DayWater(), 305, 58);
+        addObject(new DayWater(), 300, 65);
+        addObject(new DayWater(), 310, 65);
+        
+        // Blue house "invisible barriers"
+        addObject(new DayWater(), 50, 277);
+        addObject(new DayWater(), 50, 307);
+        addObject(new DayWater(), 50, 285);
+        addObject(new DayWater(), 35, 300);
+        addObject(new DayWater(), 65, 300);
+        
+        // Yellow house "invisible barriers"
+        addObject(new DayWater(), 600, 400);
+        addObject(new DayWater(), 570, 400);
+        addObject(new DayWater(), 630, 400);
+        addObject(new DayWater(), 570, 410);
+        addObject(new DayWater(), 585, 410);
+        addObject(new DayWater(), 570, 385);
+        addObject(new DayWater(), 590, 389);
         
         // Spawn POIs
         addObject(new DayHouse1(), 50, 300);

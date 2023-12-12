@@ -36,7 +36,7 @@ public class Player extends Actor
         int x = getX();
         int y = getY();
         
-        // Move the player from key pressed
+        // Move the player from key press
         if (Greenfoot.isKeyDown("down"))
         {
             this.setImage(characterNum + " - forward facing.png");
