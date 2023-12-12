@@ -271,7 +271,7 @@ public class Level1 extends World
                 heart4.setImage("empty_heart.png");
                     
             case 50:
-                    heart3.setImage("half_heart.png");
+                heart3.setImage("half_heart.png");
                     
             case 40:
                 heart3.setImage("empty_heart.png");
