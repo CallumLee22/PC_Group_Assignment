@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Level1 here.
+ * Level 1 is in a village where the player must defeat all of the enemies
  * 
  * @author Callum Lee 
- * @version 24/11/2023
+ * @version 12/12/2023
  */
 public class Level1 extends World
 {
@@ -12,7 +12,18 @@ public class Level1 extends World
      * Constructor for objects of class Level1.
      * 
      */
-    int characterNum;
+    
+    private int characterNum;
+    
+    // Itsantiate player
+    private Player player;
+    
+    // Make different numbered hearts so that an individual heart can have image changed when damage is taken by the player
+    private Heart heart1 = new Heart();
+    private Heart heart2 = new Heart();
+    private Heart heart3 = new Heart();
+    private Heart heart4 = new Heart();
+    private Heart heart5 = new Heart();
     
     public Level1(int characterNum)
     {
@@ -21,6 +32,7 @@ public class Level1 extends World
         
         // Get character chosen
         this.characterNum = characterNum;
+        this.player = new Player(characterNum);
         
         // Pit "invisible barrier"
         addObject(new DayWater(), 650, 100);
@@ -174,30 +186,25 @@ public class Level1 extends World
         addObject(new DayPit(), 650, 100);
         
         // Spawn player
-        addObject(new Player(characterNum), 50, 350);
+        addObject(player, 50, 350);
         
-        // Make different numbered hearts so that an individual heart can have image changed when damage is taken by the player
-        Heart heart1 = new Heart();
+        // Scale heart images
         GreenfootImage heart1Image = heart1.getImage();
         heart1Image.scale(heart1Image.getWidth() * 2, heart1Image.getHeight() * 2);
         heart1.setImage(heart1Image);
         
-        Heart heart2 = new Heart();
         GreenfootImage heart2Image = heart2.getImage();
         heart2Image.scale(heart2Image.getWidth() * 2, heart2Image.getHeight() * 2);
         heart2.setImage(heart2Image);
         
-        Heart heart3 = new Heart();
         GreenfootImage heart3Image = heart3.getImage();
         heart3Image.scale(heart3Image.getWidth() * 2, heart3Image.getHeight() * 2);
         heart3.setImage(heart3Image);
         
-        Heart heart4 = new Heart();
         GreenfootImage heart4Image = heart4.getImage();
         heart4Image.scale(heart4Image.getWidth() * 2, heart4Image.getHeight() * 2);
         heart4.setImage(heart4Image);
         
-        Heart heart5 = new Heart();
         GreenfootImage heart5Image = heart5.getImage();
         heart5Image.scale(heart5Image.getWidth() * 2, heart5Image.getHeight() * 2);
         heart5.setImage(heart5Image);
@@ -244,6 +251,45 @@ public class Level1 extends World
             {
                 addObject(new DayGroundDetail3(), x, y);
             }
+        }
+    }
+    
+    public void act()
+    {
+        switch (player.health)
+        {
+            case 90:
+                heart5.setImage("half_heart.png");
+                
+            case 80:
+                heart5.setImage("empty_heart.png");
+                    
+            case 70:
+                heart4.setImage("half_heart.png");
+                    
+            case 60:
+                heart4.setImage("empty_heart.png");
+                    
+            case 50:
+                    heart3.setImage("half_heart.png");
+                    
+            case 40:
+                heart3.setImage("empty_heart.png");
+                
+            case 30:
+                heart2.setImage("half_heart.png");
+                    
+            case 20:
+                heart2.setImage("empty_heart.png");
+                
+            case 10 :
+                heart1.setImage("half_heart.png");
+                
+            case 0:
+                heart1.setImage("empty_heart.png");
+                
+            default:
+                break;
         }
     }
 }
