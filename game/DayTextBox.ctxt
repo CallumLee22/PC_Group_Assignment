@@ -5,6 +5,4 @@ comment1.params=purpose
 comment1.target=DayTextBox(java.lang.String)
 comment2.params=
 comment2.target=void\ act()
-comment3.params=character
-comment3.target=void\ characterSelection(int)
-numComments=4
+numComments=3

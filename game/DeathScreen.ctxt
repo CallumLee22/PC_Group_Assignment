@@ -4,4 +4,6 @@ comment0.text=\r\n\ Screen\ displayed\ upon\ player\ death\r\n\ \r\n\ @author\ C
 comment1.params=
 comment1.target=DeathScreen()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ DeathScreen.\r\n\ \r\n
-numComments=2
+comment2.params=
+comment2.target=void\ act()
+numComments=3

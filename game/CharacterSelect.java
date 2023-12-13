@@ -85,19 +85,19 @@ public class CharacterSelect extends World
         
         if (Greenfoot.mouseClicked(objects.get(1)))
         {
-            DayTextBox.characterSelection(2);
+            Greenfoot.setWorld(new Level1(2));
         }
         else if (Greenfoot.mouseClicked(objects.get(2)))
         {
-            DayTextBox.characterSelection(4);
+            Greenfoot.setWorld(new Level1(4));
         }
         else if (Greenfoot.mouseClicked(objects.get(3)))
         {
-            DayTextBox.characterSelection(5);
+            Greenfoot.setWorld(new Level1(5));
         }
         else if (Greenfoot.mouseClicked(objects.get(4)))
         {
-            DayTextBox.characterSelection(6);
+            Greenfoot.setWorld(new Level1(6));
         }
     }
 }

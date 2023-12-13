@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.List;
 
 /**
  * Screen displayed upon player death
@@ -8,7 +9,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class DeathScreen extends World
 {
-
     /**
      * Constructor for objects of class DeathScreen.
      * 
@@ -45,7 +45,18 @@ public class DeathScreen extends World
         textBox.getImage().drawImage(new GreenfootImage("You Died", 70, Color.WHITE, null), 180, 40);
         addObject(textBox, 375, 85);
         
-        // Stop execution, game over
-        Greenfoot.stop();
+        // Restart button
+        DayTextBox restartButton = new DayTextBox("character");
+        restartButton.getImage().drawImage(new GreenfootImage("Restart", 40, Color.WHITE, null), 15, 45);
+        addObject(restartButton, 375, 400);
+    }
+    
+    public void act()
+    {
+        List<DayTextBox> objects= this.getObjects(DayTextBox.class);
+        if (Greenfoot.mouseClicked(objects.get(1)))
+        {
+            Greenfoot.setWorld(new TitleScreen());
+        }
     }
 }
