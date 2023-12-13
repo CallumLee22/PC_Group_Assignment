@@ -19,6 +19,7 @@ public class HealthPickUp extends Actor
     
     public void checkValidSpawn()
     {
+        // Only spawn health pick ups in places that the player can access
         while(
         isAtEdge() || isTouching(DayWater.class) || isTouching(DayHouse1.class) || isTouching(DayChurch.class) || isTouching(DayHouse2.class) || 
         isTouching(DayPit.class)|| isTouching(NightWater.class) || isTouching(NightHouse1.class) || isTouching(NightChurch.class) || 

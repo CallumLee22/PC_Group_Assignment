@@ -111,6 +111,7 @@ public class Player extends Actor
     
     private void itemPickUp()
     {
+        // Check if player picks up a health item, removes from world if true
         HealthPickUp pickUp = (HealthPickUp) getOneIntersectingObject(HealthPickUp.class);
         if (pickUp != null)
         {
@@ -126,6 +127,5 @@ public class Player extends Actor
             World currentWorld = getWorld();
             currentWorld.removeObject(pickUp);
         }
-        
     }
 }

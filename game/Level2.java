@@ -335,6 +335,7 @@ public class Level2 extends World
     
     private void spawnHealthPickUps()
     {
+        // Spawn health pick ups in the world
         for (int i = 1; i <= 2; i++)
         {
             int x = Greenfoot.getRandomNumber(750);
