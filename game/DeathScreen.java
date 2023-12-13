@@ -39,5 +39,13 @@ public class DeathScreen extends World
                 }
             }
         }
+        
+        // Get title text box
+        DayTextBox textBox = new DayTextBox("title");
+        textBox.getImage().drawImage(new GreenfootImage("You Died", 70, Color.WHITE, null), 180, 40);
+        addObject(textBox, 375, 85);
+        
+        // Stop execution, game over
+        Greenfoot.stop();
     }
 }
