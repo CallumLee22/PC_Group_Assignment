@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Player here.
+ * This is the class for the character that the player controls
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Callum Lee 
+ * 12/12/2023
  */
 public class Player extends Actor
 {
@@ -12,22 +12,27 @@ public class Player extends Actor
      * Act - do whatever the Player wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
     private int characterNum;
     
     // Set speed
     private int speed = 2;
+    
+    // Player health
+    public int health;
     
     public Player(int characterNum)
     {
         // Get the chosen character and set that as the image
         this.characterNum = characterNum;
         this.setImage(characterNum + " - forward facing.png");
-        
+        this.health = 100;
     }
     
     public void act()
-    {
+    {     
         move();
+        itemPickUp();
     }
     
     private void move()
@@ -101,6 +106,26 @@ public class Player extends Actor
         else
         {
             return false;
+        }
+    }
+    
+    private void itemPickUp()
+    {
+        // Check if player picks up a health item, removes from world if true
+        HealthPickUp pickUp = (HealthPickUp) getOneIntersectingObject(HealthPickUp.class);
+        if (pickUp != null)
+        {
+            if (health + 20 > 100)
+            {
+                health = 100;
+            }
+            else
+            {
+                health += 20;
+            }
+            
+            World currentWorld = getWorld();
+            currentWorld.removeObject(pickUp);
         }
     }
 }

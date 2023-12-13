@@ -1,23 +1,38 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Level2 here.
+ * Level 2 is a night version of level 1
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Callum Lee 
+ * @version 12/12/2023
  */
 public class Level2 extends World
 {
-
     /**
      * Constructor for objects of class Level1.
      * 
      */
     
-    public Level2()
+    private int characterNum;
+    
+    // Itsantiate player
+    private Player player;
+    
+    // Make different numbered hearts so that an individual heart can have image changed when damage is taken by the player
+    private Heart heart1 = new Heart();
+    private Heart heart2 = new Heart();
+    private Heart heart3 = new Heart();
+    private Heart heart4 = new Heart();
+    private Heart heart5 = new Heart();
+    
+    public Level2(int characterNum)
     {    
         // Create a new world with 750x500 cells with a cell size of 1x1 pixels.
         super(750, 500, 1);
+        
+        // Get chosen character
+        this.characterNum = characterNum;
+        this.player = new Player(characterNum);
         
         // Pit "invisible barrier"
         addObject(new DayWater(), 650, 100);
@@ -170,28 +185,26 @@ public class Level2 extends World
         addObject(new NightBridge(), 480, 192);
         addObject(new NightPit(), 650, 100);
         
-        // Make different numbered hearts so that an individual heart can have image changed when damage is taken by the player
-        Heart heart1 = new Heart();
+        // Spawn player
+        addObject(player, 50, 350);
+        
+        // Scale heart images
         GreenfootImage heart1Image = heart1.getImage();
         heart1Image.scale(heart1Image.getWidth() * 2, heart1Image.getHeight() * 2);
         heart1.setImage(heart1Image);
         
-        Heart heart2 = new Heart();
         GreenfootImage heart2Image = heart2.getImage();
         heart2Image.scale(heart2Image.getWidth() * 2, heart2Image.getHeight() * 2);
         heart2.setImage(heart2Image);
         
-        Heart heart3 = new Heart();
         GreenfootImage heart3Image = heart3.getImage();
         heart3Image.scale(heart3Image.getWidth() * 2, heart3Image.getHeight() * 2);
         heart3.setImage(heart3Image);
         
-        Heart heart4 = new Heart();
         GreenfootImage heart4Image = heart4.getImage();
         heart4Image.scale(heart4Image.getWidth() * 2, heart4Image.getHeight() * 2);
         heart4.setImage(heart4Image);
         
-        Heart heart5 = new Heart();
         GreenfootImage heart5Image = heart5.getImage();
         heart5Image.scale(heart5Image.getWidth() * 2, heart5Image.getHeight() * 2);
         heart5.setImage(heart5Image);
@@ -202,6 +215,8 @@ public class Level2 extends World
         addObject(heart3, 80, 20);
         addObject(heart4, 110, 20);
         addObject(heart5, 140, 20);
+        
+        spawnHealthPickUps();
     }
     
     private void getRandomGround(int x, int y)
@@ -238,6 +253,96 @@ public class Level2 extends World
             {
                 addObject(new NightGroundDetail3(), x, y);
             }
+        }
+    }
+    
+    public void act()
+    {
+        checkHealth();
+    }
+    
+    private void checkHealth()
+    {
+        // Change heart images to reflect the player's health
+        if (player.health == 90)
+        {
+            heart5.setImage("half_heart.png");
+            GreenfootImage heart5Image = heart5.getImage();
+            heart5Image.scale(heart5Image.getWidth() * 2, heart5Image.getHeight() * 2);
+            heart5.setImage(heart5Image);
+        }
+        else if (player.health == 80)
+        {
+            heart5.setImage("empty_heart.png");
+            GreenfootImage heart5Image = heart5.getImage();
+            heart5Image.scale(heart5Image.getWidth() * 2, heart5Image.getHeight() * 2);
+            heart5.setImage(heart5Image);
+        }
+        else if (player.health == 70)
+        {
+            heart4.setImage("half_heart.png");
+            GreenfootImage heart4Image = heart4.getImage();
+            heart4Image.scale(heart4Image.getWidth() * 2, heart4Image.getHeight() * 2);
+            heart4.setImage(heart4Image);
+        }
+        else if (player.health == 60)
+        {
+            heart4.setImage("empty_heart.png");
+            GreenfootImage heart4Image = heart4.getImage();
+            heart4Image.scale(heart4Image.getWidth() * 2, heart4Image.getHeight() * 2);
+            heart4.setImage(heart4Image);
+        }
+        else if (player.health == 50)
+        {
+            heart3.setImage("half_heart.png");
+            GreenfootImage heart3Image = heart3.getImage();
+            heart3Image.scale(heart3Image.getWidth() * 2, heart3Image.getHeight() * 2);
+            heart3.setImage(heart3Image);
+        }
+        else if (player.health == 40)
+        {
+            heart3.setImage("empty_heart.png");
+            GreenfootImage heart3Image = heart3.getImage();
+            heart3Image.scale(heart3Image.getWidth() * 2, heart3Image.getHeight() * 2);
+            heart3.setImage(heart3Image);
+        }
+        else if (player.health == 30)
+        {
+            heart2.setImage("half_heart.png");
+            GreenfootImage heart2Image = heart2.getImage();
+            heart2Image.scale(heart2Image.getWidth() * 2, heart2Image.getHeight() * 2);
+            heart2.setImage(heart2Image);
+        }
+        else if (player.health == 20)
+        {
+            heart2.setImage("empty_heart.png");
+            GreenfootImage heart2Image = heart2.getImage();
+            heart2Image.scale(heart2Image.getWidth() * 2, heart2Image.getHeight() * 2);
+            heart2.setImage(heart2Image);
+        }
+        else if (player.health == 10)
+        {
+            heart1.setImage("half_heart.png");
+            GreenfootImage heart1Image = heart1.getImage();
+            heart1Image.scale(heart1Image.getWidth() * 2, heart1Image.getHeight() * 2);
+            heart1.setImage(heart1Image);
+        }
+        else if (player.health == 0)
+        {
+            Greenfoot.setWorld(new DeathScreen());
+        }
+    }
+    
+    private void spawnHealthPickUps()
+    {
+        // Spawn health pick ups in the world
+        for (int i = 1; i <= 2; i++)
+        {
+            int x = Greenfoot.getRandomNumber(750);
+            int y = Greenfoot.getRandomNumber(500);
+            HealthPickUp pickUp= new HealthPickUp();
+            addObject(pickUp, x, y);
+            pickUp.checkValidSpawn();
         }
     }
 }

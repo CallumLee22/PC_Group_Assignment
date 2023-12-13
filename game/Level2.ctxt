@@ -1,9 +1,14 @@
 #BlueJ class context
 comment0.target=Level2
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Level2\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=
-comment1.target=Level2()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Level1.\r\n\ \r\n
+comment0.text=\r\n\ Level\ 2\ is\ a\ night\ version\ of\ level\ 1\r\n\ \r\n\ @author\ Callum\ Lee\ \r\n\ @version\ 12/12/2023\r\n
+comment1.params=characterNum
+comment1.target=Level2(int)
 comment2.params=x\ y
 comment2.target=void\ getRandomGround(int,\ int)
-numComments=3
+comment3.params=
+comment3.target=void\ act()
+comment4.params=
+comment4.target=void\ checkHealth()
+comment5.params=
+comment5.target=void\ spawnHealthPickUps()
+numComments=6
