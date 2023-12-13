@@ -31,6 +31,12 @@ public class Player extends Actor
     
     public void act()
     {
+        if (isTouching(DayChurch.class))
+        {
+            health -= 10;
+            setLocation(getX(), getY() + 10);
+        }
+        
         move();
         itemPickUp();
     }

@@ -270,6 +270,26 @@ public class Level1 extends World
             GreenfootImage heart5Image = heart5.getImage();
             heart5Image.scale(heart5Image.getWidth() * 2, heart5Image.getHeight() * 2);
             heart5.setImage(heart5Image);
+            
+            heart4.setImage("whole_heart.png");
+            GreenfootImage heart4Image = heart4.getImage();
+            heart4Image.scale(heart4Image.getWidth() * 2, heart4Image.getHeight() * 2);
+            heart4.setImage(heart4Image);
+            
+            heart3.setImage("whole_heart.png");
+            GreenfootImage heart3Image = heart3.getImage();
+            heart3Image.scale(heart3Image.getWidth() * 2, heart3Image.getHeight() * 2);
+            heart3.setImage(heart3Image);
+            
+            heart2.setImage("whole_heart.png");
+            GreenfootImage heart2Image = heart2.getImage();
+            heart2Image.scale(heart2Image.getWidth() * 2, heart2Image.getHeight() * 2);
+            heart2.setImage(heart2Image);
+            
+            heart1.setImage("whole_heart.png");
+            GreenfootImage heart1Image = heart1.getImage();
+            heart1Image.scale(heart1Image.getWidth() * 2, heart1Image.getHeight() * 2);
+            heart1.setImage(heart1Image);
         }
         else if (player.health == 80)
         {
@@ -277,6 +297,26 @@ public class Level1 extends World
             GreenfootImage heart5Image = heart5.getImage();
             heart5Image.scale(heart5Image.getWidth() * 2, heart5Image.getHeight() * 2);
             heart5.setImage(heart5Image);
+            
+            heart4.setImage("whole_heart.png");
+            GreenfootImage heart4Image = heart4.getImage();
+            heart4Image.scale(heart4Image.getWidth() * 2, heart4Image.getHeight() * 2);
+            heart4.setImage(heart4Image);
+            
+            heart3.setImage("whole_heart.png");
+            GreenfootImage heart3Image = heart3.getImage();
+            heart3Image.scale(heart3Image.getWidth() * 2, heart3Image.getHeight() * 2);
+            heart3.setImage(heart3Image);
+            
+            heart2.setImage("whole_heart.png");
+            GreenfootImage heart2Image = heart2.getImage();
+            heart2Image.scale(heart2Image.getWidth() * 2, heart2Image.getHeight() * 2);
+            heart2.setImage(heart2Image);
+            
+            heart1.setImage("whole_heart.png");
+            GreenfootImage heart1Image = heart1.getImage();
+            heart1Image.scale(heart1Image.getWidth() * 2, heart1Image.getHeight() * 2);
+            heart1.setImage(heart1Image);
         }
         else if (player.health == 70)
         {
@@ -284,6 +324,21 @@ public class Level1 extends World
             GreenfootImage heart4Image = heart4.getImage();
             heart4Image.scale(heart4Image.getWidth() * 2, heart4Image.getHeight() * 2);
             heart4.setImage(heart4Image);
+            
+            heart3.setImage("whole_heart.png");
+            GreenfootImage heart3Image = heart3.getImage();
+            heart3Image.scale(heart3Image.getWidth() * 2, heart3Image.getHeight() * 2);
+            heart3.setImage(heart3Image);
+            
+            heart2.setImage("whole_heart.png");
+            GreenfootImage heart2Image = heart2.getImage();
+            heart2Image.scale(heart2Image.getWidth() * 2, heart2Image.getHeight() * 2);
+            heart2.setImage(heart2Image);
+            
+            heart1.setImage("whole_heart.png");
+            GreenfootImage heart1Image = heart1.getImage();
+            heart1Image.scale(heart1Image.getWidth() * 2, heart1Image.getHeight() * 2);
+            heart1.setImage(heart1Image);
         }
         else if (player.health == 60)
         {
@@ -291,6 +346,21 @@ public class Level1 extends World
             GreenfootImage heart4Image = heart4.getImage();
             heart4Image.scale(heart4Image.getWidth() * 2, heart4Image.getHeight() * 2);
             heart4.setImage(heart4Image);
+            
+            heart3.setImage("whole_heart.png");
+            GreenfootImage heart3Image = heart3.getImage();
+            heart3Image.scale(heart3Image.getWidth() * 2, heart3Image.getHeight() * 2);
+            heart3.setImage(heart3Image);
+            
+            heart2.setImage("whole_heart.png");
+            GreenfootImage heart2Image = heart2.getImage();
+            heart2Image.scale(heart2Image.getWidth() * 2, heart2Image.getHeight() * 2);
+            heart2.setImage(heart2Image);
+            
+            heart1.setImage("whole_heart.png");
+            GreenfootImage heart1Image = heart1.getImage();
+            heart1Image.scale(heart1Image.getWidth() * 2, heart1Image.getHeight() * 2);
+            heart1.setImage(heart1Image);
         }
         else if (player.health == 50)
         {
@@ -298,6 +368,16 @@ public class Level1 extends World
             GreenfootImage heart3Image = heart3.getImage();
             heart3Image.scale(heart3Image.getWidth() * 2, heart3Image.getHeight() * 2);
             heart3.setImage(heart3Image);
+            
+            heart2.setImage("whole_heart.png");
+            GreenfootImage heart2Image = heart2.getImage();
+            heart2Image.scale(heart2Image.getWidth() * 2, heart2Image.getHeight() * 2);
+            heart2.setImage(heart2Image);
+            
+            heart1.setImage("whole_heart.png");
+            GreenfootImage heart1Image = heart1.getImage();
+            heart1Image.scale(heart1Image.getWidth() * 2, heart1Image.getHeight() * 2);
+            heart1.setImage(heart1Image);
         }
         else if (player.health == 40)
         {
@@ -305,6 +385,16 @@ public class Level1 extends World
             GreenfootImage heart3Image = heart3.getImage();
             heart3Image.scale(heart3Image.getWidth() * 2, heart3Image.getHeight() * 2);
             heart3.setImage(heart3Image);
+            
+            heart2.setImage("whole_heart.png");
+            GreenfootImage heart2Image = heart2.getImage();
+            heart2Image.scale(heart2Image.getWidth() * 2, heart2Image.getHeight() * 2);
+            heart2.setImage(heart2Image);
+            
+            heart1.setImage("whole_heart.png");
+            GreenfootImage heart1Image = heart1.getImage();
+            heart1Image.scale(heart1Image.getWidth() * 2, heart1Image.getHeight() * 2);
+            heart1.setImage(heart1Image);
         }
         else if (player.health == 30)
         {
@@ -312,6 +402,11 @@ public class Level1 extends World
             GreenfootImage heart2Image = heart2.getImage();
             heart2Image.scale(heart2Image.getWidth() * 2, heart2Image.getHeight() * 2);
             heart2.setImage(heart2Image);
+            
+            heart1.setImage("whole_heart.png");
+            GreenfootImage heart1Image = heart1.getImage();
+            heart1Image.scale(heart1Image.getWidth() * 2, heart1Image.getHeight() * 2);
+            heart1.setImage(heart1Image);
         }
         else if (player.health == 20)
         {
