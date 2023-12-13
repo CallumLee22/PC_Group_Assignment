@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=HealthPickUp
+comment0.text=\r\n\ Items\ that\ a\ player\ can\ pick\ up\ to\ restore\ health\r\n\ \r\n\ @author\ Callum\ Lee\r\n\ @version\ 13/12/2023\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ HealthPickUp\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.params=
+comment2.target=void\ checkValidSpawn()
+numComments=3

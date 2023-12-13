@@ -9,4 +9,6 @@ comment3.params=
 comment3.target=void\ move()
 comment4.params=
 comment4.target=boolean\ hitObstacles()
-numComments=5
+comment5.params=
+comment5.target=void\ itemPickUp()
+numComments=6

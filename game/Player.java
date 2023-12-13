@@ -32,6 +32,7 @@ public class Player extends Actor
     public void act()
     {
         move();
+        itemPickUp();
     }
     
     private void move()
@@ -106,5 +107,25 @@ public class Player extends Actor
         {
             return false;
         }
+    }
+    
+    private void itemPickUp()
+    {
+        HealthPickUp pickUp = (HealthPickUp) getOneIntersectingObject(HealthPickUp.class);
+        if (pickUp != null)
+        {
+            if (health + 20 > 100)
+            {
+                health = 100;
+            }
+            else
+            {
+                health += 20;
+            }
+            
+            World currentWorld = getWorld();
+            currentWorld.removeObject(pickUp);
+        }
+        
     }
 }

@@ -215,6 +215,8 @@ public class Level2 extends World
         addObject(heart3, 80, 20);
         addObject(heart4, 110, 20);
         addObject(heart5, 140, 20);
+        
+        spawnHealthPickUps();
     }
     
     private void getRandomGround(int x, int y)
@@ -328,6 +330,18 @@ public class Level2 extends World
         else if (player.health == 0)
         {
             Greenfoot.setWorld(new DeathScreen());
+        }
+    }
+    
+    private void spawnHealthPickUps()
+    {
+        for (int i = 1; i <= 2; i++)
+        {
+            int x = Greenfoot.getRandomNumber(750);
+            int y = Greenfoot.getRandomNumber(500);
+            HealthPickUp pickUp= new HealthPickUp();
+            addObject(pickUp, x, y);
+            pickUp.checkValidSpawn();
         }
     }
 }
