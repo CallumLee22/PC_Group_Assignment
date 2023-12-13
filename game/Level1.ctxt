@@ -7,4 +7,6 @@ comment2.params=x\ y
 comment2.target=void\ getRandomGround(int,\ int)
 comment3.params=
 comment3.target=void\ act()
-numComments=4
+comment4.params=
+comment4.target=void\ checkHealth()
+numComments=5

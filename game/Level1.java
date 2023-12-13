@@ -256,40 +256,78 @@ public class Level1 extends World
     
     public void act()
     {
-        switch (player.health)
+        checkHealth();
+    }
+    
+    private void checkHealth()
+    {
+        // Change heart images to reflect the player's health
+        if (player.health == 90)
         {
-            case 90:
-                heart5.setImage("half_heart.png");
-                
-            case 80:
-                heart5.setImage("empty_heart.png");
-                    
-            case 70:
-                heart4.setImage("half_heart.png");
-                    
-            case 60:
-                heart4.setImage("empty_heart.png");
-                    
-            case 50:
-                heart3.setImage("half_heart.png");
-                    
-            case 40:
-                heart3.setImage("empty_heart.png");
-                
-            case 30:
-                heart2.setImage("half_heart.png");
-                    
-            case 20:
-                heart2.setImage("empty_heart.png");
-                
-            case 10 :
-                heart1.setImage("half_heart.png");
-                
-            case 0:
-                heart1.setImage("empty_heart.png");
-                
-            default:
-                break;
+            heart5.setImage("half_heart.png");
+            GreenfootImage heart5Image = heart5.getImage();
+            heart5Image.scale(heart5Image.getWidth() * 2, heart5Image.getHeight() * 2);
+            heart5.setImage(heart5Image);
+        }
+        else if (player.health == 80)
+        {
+            heart5.setImage("empty_heart.png");
+            GreenfootImage heart5Image = heart5.getImage();
+            heart5Image.scale(heart5Image.getWidth() * 2, heart5Image.getHeight() * 2);
+            heart5.setImage(heart5Image);
+        }
+        else if (player.health == 70)
+        {
+            heart4.setImage("half_heart.png");
+            GreenfootImage heart4Image = heart4.getImage();
+            heart4Image.scale(heart4Image.getWidth() * 2, heart4Image.getHeight() * 2);
+            heart4.setImage(heart4Image);
+        }
+        else if (player.health == 60)
+        {
+            heart4.setImage("empty_heart.png");
+            GreenfootImage heart4Image = heart4.getImage();
+            heart4Image.scale(heart4Image.getWidth() * 2, heart4Image.getHeight() * 2);
+            heart4.setImage(heart4Image);
+        }
+        else if (player.health == 50)
+        {
+            heart3.setImage("half_heart.png");
+            GreenfootImage heart3Image = heart3.getImage();
+            heart3Image.scale(heart3Image.getWidth() * 2, heart3Image.getHeight() * 2);
+            heart3.setImage(heart3Image);
+        }
+        else if (player.health == 40)
+        {
+            heart3.setImage("empty_heart.png");
+            GreenfootImage heart3Image = heart3.getImage();
+            heart3Image.scale(heart3Image.getWidth() * 2, heart3Image.getHeight() * 2);
+            heart3.setImage(heart3Image);
+        }
+        else if (player.health == 30)
+        {
+            heart2.setImage("half_heart.png");
+            GreenfootImage heart2Image = heart2.getImage();
+            heart2Image.scale(heart2Image.getWidth() * 2, heart2Image.getHeight() * 2);
+            heart2.setImage(heart2Image);
+        }
+        else if (player.health == 20)
+        {
+            heart2.setImage("empty_heart.png");
+            GreenfootImage heart2Image = heart2.getImage();
+            heart2Image.scale(heart2Image.getWidth() * 2, heart2Image.getHeight() * 2);
+            heart2.setImage(heart2Image);
+        }
+        else if (player.health == 10)
+        {
+            heart1.setImage("half_heart.png");
+            GreenfootImage heart1Image = heart1.getImage();
+            heart1Image.scale(heart1Image.getWidth() * 2, heart1Image.getHeight() * 2);
+            heart1.setImage(heart1Image);
+        }
+        else if (player.health == 0)
+        {
+            Greenfoot.setWorld(new DeathScreen());
         }
     }
 }
