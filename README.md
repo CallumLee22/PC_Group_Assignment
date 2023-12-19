@@ -14,3 +14,6 @@ Callum Lee, Lucas Hicks, Ben Jefferis
 - Each hit taken by the player causes 1/2 a heart to be lost
 ### Items To Collect
 - Health pick-ups
+- Each health pick-up replenishes 1 heart
+- Health pick-ups are spawned in random locations on each level
+### Screenshots
