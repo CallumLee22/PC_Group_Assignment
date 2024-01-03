@@ -15,8 +15,23 @@ public class Projectile extends Actor
     
     private int direction;
     
+    // Get image to manipulate later
+    public GreenfootImage image = getImage();
+    
     public Projectile(int speed) 
     {
+        if (speed == 3)
+        {
+            this.setImage("arrow.png");
+            image = this.getImage();
+            image.scale(15,15);
+        }
+        else if (speed == -3)
+        {
+            image = this.getImage();
+            image.mirrorHorizontally();
+            image.scale(15,15);
+        }
         direction = speed;
     }
     
