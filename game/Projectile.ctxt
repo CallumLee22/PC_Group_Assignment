@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Projectile
+comment0.text=\r\n\ Projectile\ used\ to\ damage\ enemies\r\n\ \r\n\ @author\ Callum\ Lee\r\n\ @version\ 3/1/2024\r\n
+comment1.params=speed
+comment1.target=Projectile(int)
+comment2.params=
+comment2.target=void\ act()
+comment3.params=distance
+comment3.target=void\ move(int)
+numComments=4
