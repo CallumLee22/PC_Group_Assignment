@@ -13,7 +13,7 @@ public class Projectile extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-    int direction = 3;
+    private int direction;
     
     public Projectile(int speed) 
     {
@@ -23,6 +23,10 @@ public class Projectile extends Actor
     public void act()
     {
         move(direction);
+        if (isAtEdge())
+        {
+            getWorld().removeObject(this);
+        }
     }
     
     public void move(int distance) 

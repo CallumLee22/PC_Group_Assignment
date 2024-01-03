@@ -21,6 +21,9 @@ public class Player extends Actor
     // Player health
     public int health;
     
+    // Speed for projectile changes depending on where the player is moving
+    public int shotSpeed = 3;
+    
     public Player(int characterNum)
     {
         // Get the chosen character and set that as the image
@@ -33,6 +36,7 @@ public class Player extends Actor
     {     
         move();
         itemPickUp();
+        shoot();
     }
     
     private void move()
@@ -71,6 +75,7 @@ public class Player extends Actor
             this.setImage(characterNum + " - right facing.png");
             x += speed;
             setLocation(x, y);
+            shotSpeed = 3;
             if (hitObstacles())
             {
                 x -= speed;
@@ -83,6 +88,7 @@ public class Player extends Actor
             this.setImage(characterNum + " - left facing.png");
             x -= speed;
             setLocation(x, y);
+            shotSpeed = -3;
             if (hitObstacles())
             {
                 x += speed;
@@ -126,6 +132,16 @@ public class Player extends Actor
             
             World currentWorld = getWorld();
             currentWorld.removeObject(pickUp);
+        }
+    }
+    
+    public void shoot()
+    {
+        if ("space".equals(Greenfoot.getKey()))
+        {
+            Projectile shot = new Projectile(shotSpeed);
+            getWorld().addObject(shot, getX(), getY());
+            shot.move(speed * 5);
         }
     }
 }
