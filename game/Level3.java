@@ -15,12 +15,27 @@ public class Level3 extends World
     public Level3()
     {    
         super(750, 500, 1);
-        for (int x = 1; x <= 750; x++)
+        
+        
+        
+        for (int x = 0; x <= 750; x = x + 15)
         {
-            for (int y = 1; y<=500; y++)
+            for (int y = 0; y<=500; y = y + 15)
             {
-                addObject(new DayGrass(), x, y);
+                int ranNum = Greenfoot.getRandomNumber(100);
+                if (ranNum % 10 == 0)
+                {
+                    addObject(new DayGrassDetail3(), x, y);
+                }
+                else if(ranNum % 15 == 0)
+                {
+                    addObject(new DayGrassDetail5(), x, y);
+                }
+                else
+                {
+                    addObject(new DayGrass(), x, y);
+                }
+            }
+        }
     }
-}
-}
 }
