@@ -24,6 +24,8 @@ public class Player extends Actor
     // Speed for projectile changes depending on where the player is moving
     public int shotSpeed = 3;
     
+    private String lastKey;
+    
     public Player(int characterNum)
     {
         // Get the chosen character and set that as the image
@@ -34,12 +36,12 @@ public class Player extends Actor
     
     public void act()
     {     
-        move();
+        lastKey = move();
         itemPickUp();
-        shoot();
+        shoot(lastKey);
     }
     
-    private void move()
+    private String move()
     {
         // Get current position of player
         int x = getX();
@@ -51,6 +53,8 @@ public class Player extends Actor
             this.setImage(characterNum + " - forward facing.png");
             y += speed;
             setLocation(x, y);
+            shotSpeed = 3;
+            lastKey = "down";
             if (hitObstacles())
             {
                 y -= speed;
@@ -63,6 +67,8 @@ public class Player extends Actor
             this.setImage(characterNum + " - rear facing_still.png");
             y -= speed;
             setLocation(x, y);
+            shotSpeed = -3;
+            lastKey = "up";
             if (hitObstacles())
             {
                 y += speed;
@@ -76,6 +82,7 @@ public class Player extends Actor
             x += speed;
             setLocation(x, y);
             shotSpeed = 3;
+            lastKey = "right";
             if (hitObstacles())
             {
                 x -= speed;
@@ -89,12 +96,14 @@ public class Player extends Actor
             x -= speed;
             setLocation(x, y);
             shotSpeed = -3;
+            lastKey = "left";
             if (hitObstacles())
             {
                 x += speed;
                 setLocation(x, y);
             }
         }
+        return lastKey;
     }
     
     private boolean hitObstacles()
@@ -135,11 +144,11 @@ public class Player extends Actor
         }
     }
     
-    public void shoot()
+    public void shoot(String lastKey)
     {
         if ("space".equals(Greenfoot.getKey()))
         {
-            Projectile shot = new Projectile(shotSpeed);
+            Projectile shot = new Projectile(shotSpeed, lastKey);
             getWorld().addObject(shot, getX(), getY());
             shot.move(speed * 5);
         }
