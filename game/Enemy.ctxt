@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Enemy
+comment0.text=\r\n\ This\ is\ the\ class\ for\ the\ enemy\ that\ opposes\ the\ Player\r\n\ \r\n\ Ben\ Jefferis\ \r\n\ 19/12/2023\r\n
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=void\ followPlayer()
+comment3.params=
+comment3.target=boolean\ hitObstacles()
+comment4.params=
+comment4.target=void\ handleObstacles()
+comment5.params=
+comment5.target=void\ checkCollisions()
+numComments=6

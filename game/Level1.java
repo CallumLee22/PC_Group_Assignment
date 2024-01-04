@@ -216,7 +216,21 @@ public class Level1 extends World
         addObject(heart5, 140, 20);
         
         spawnHealthPickUps();
+        
+        addEnemy(5);
     }
+    
+    
+    private void addEnemy(int numberOfEnemy)
+    {
+        for (int i = 0; i < numberOfEnemy; i++)
+        {
+            int x = Greenfoot.getRandomNumber(getWidth());
+            int y = Greenfoot.getRandomNumber(getHeight());
+            addObject(new Enemy(), x, y);
+        }
+    }
+    
     
     private void getRandomGround(int x, int y)
     {
@@ -426,6 +440,33 @@ public class Level1 extends World
         {
             Greenfoot.setWorld(new DeathScreen());
         }
+        {
+        int playerHealth = player.health;
+
+        // Update heart images based on player's health
+        if (playerHealth >= 90) {
+            // Set heart images accordingly
+        } else if (playerHealth >= 80) {
+            // Set heart images accordingly
+        } else if (playerHealth >= 70) {
+            // Set heart images accordingly
+        } else if (playerHealth >= 60) {
+            // Set heart images accordingly
+        } else if (playerHealth >= 50) {
+            // Set heart images accordingly
+        } else if (playerHealth >= 40) {
+            // Set heart images accordingly
+        } else if (playerHealth >= 30) {
+            // Set heart images accordingly
+        } else if (playerHealth >= 20) {
+            // Set heart images accordingly
+        } else if (playerHealth >= 10) {
+            // Set heart images accordingly
+        } else {
+            // Player health is 0, handle game over or other actions
+            Greenfoot.setWorld(new DeathScreen());
+        }
+    }
     }
     
     private void spawnHealthPickUps()
