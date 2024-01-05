@@ -89,6 +89,8 @@ public class Level3 extends World
             }
         }
         
+
+        
         //Creepy Church Spawning
         DayChurch church = new DayChurch();
         addObject(church, 690, 250);
@@ -130,6 +132,12 @@ public class Level3 extends World
         public void act()
     {
         checkHealth();
+        
+        //Game ending
+        if (player.getX() == 660 && player.getY() == 250)
+        {
+            Greenfoot.setWorld(new EndScreen());
+        }
     }
     
     private void checkHealth()
@@ -310,5 +318,5 @@ public class Level3 extends World
             addObject(pickUp, x, y);
             pickUp.checkValidSpawn();
         }
-    }   
+    }
 }
