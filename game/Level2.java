@@ -217,6 +217,8 @@ public class Level2 extends World
         addObject(heart5, 140, 20);
         
         spawnHealthPickUps();
+        
+        addEnemy(5);
     }
     
     private void getRandomGround(int x, int y)
@@ -256,9 +258,32 @@ public class Level2 extends World
         }
     }
     
+    private void addEnemy(int numberOfEnemy)
+    {
+        for (int i = 0; i < numberOfEnemy; i++)
+        {
+            int x = Greenfoot.getRandomNumber(getWidth());
+            int y = Greenfoot.getRandomNumber(getHeight());
+            addObject(new Enemy(), x, y);
+        }
+    }
+    
     public void act()
     {
         checkHealth();
+        
+        if (getObjects(Enemy.class).size() == 0) 
+        {
+            DayTextBox textBox = new DayTextBox("title");
+            GreenfootImage image = textBox.getImage();
+            image.scale(image.getWidth(), image.getHeight() / 2);
+            image.drawImage(new GreenfootImage("Escape via the path to the right!", 40, Color.WHITE, null), 60, 20);
+            addObject(textBox, 375, 65);
+            if(player.getX() >= 740 && player.getY() <= 75 && player.getY() >= 55)
+            {
+                Greenfoot.setWorld(new Level3(characterNum));
+            }
+        }
     }
     
     private void checkHealth()

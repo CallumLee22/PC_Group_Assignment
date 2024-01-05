@@ -37,7 +37,7 @@ public class EndScreen extends World
         
         // Get title text box
         DayTextBox textBox = new DayTextBox("title");
-        textBox.getImage().drawImage(new GreenfootImage("Game Over", 70, Color.WHITE, null), 180, 40);
+        textBox.getImage().drawImage(new GreenfootImage("You Survived", 70, Color.WHITE, null), 160, 40);
         addObject(textBox, 375, 85);
         
         // Restart button

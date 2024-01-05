@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=DeathScreen
-comment0.text=\n\ Screen\ displayed\ upon\ player\ death\n\ \n\ @author\ Callum\ Lee\n\ @version\ 13/12/2023\n
+comment0.text=\r\n\ Screen\ displayed\ upon\ player\ death\r\n\ \r\n\ @author\ Callum\ Lee\r\n\ @version\ 13/12/2023\r\n
 comment1.params=
 comment1.target=DeathScreen()
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ DeathScreen.\n\ \n
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ DeathScreen.\r\n\ \r\n
 comment2.params=
 comment2.target=void\ act()
 numComments=3
