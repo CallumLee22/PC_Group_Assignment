@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=DayWaterDetail2
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ DayWaterDetail2\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ DayWaterDetail2\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
 comment1.target=DayWaterDetail2()
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ DayWaterDetail2\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
