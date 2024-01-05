@@ -13,6 +13,7 @@ public class DayFence1 extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int rotate;
+    
     public DayFence1(int rotate)
     {
         this.rotate = rotate;
