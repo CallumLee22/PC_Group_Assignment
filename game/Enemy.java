@@ -21,9 +21,9 @@ public class Enemy extends Actor {
     }
 
     public void act() {
+        now2 = new Date().getTime(); 
         followPlayer();
         handleObstacles();
-        checkCollisions();
         
         if (!damaging && (now2 > now + 1000)) {
             damage();
@@ -68,21 +68,6 @@ public class Enemy extends Actor {
             // Update the previous location
             prevX = getX();
             prevY = getY();
-        }
-    }
-
-    private void checkCollisions() {
-        // Check for collisions with Player class
-        Player player = (Player) getOneIntersectingObject(Player.class);
-
-        if (player != null) {
-            // Player is hit, decrease player's health
-            player.getHit(10); // Adjust the damage value as needed
-            System.out.println("Player hit! Current health: " + player.health);
-
-            // Remove a Heart object from the world
-            Heart heart = (Heart) player.getWorld().getObjects(Heart.class).get(0);
-            player.getWorld().removeObject(heart);
         }
     }
 

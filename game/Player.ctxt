@@ -11,6 +11,4 @@ comment4.params=
 comment4.target=boolean\ hitObstacles()
 comment5.params=
 comment5.target=void\ itemPickUp()
-comment6.params=damage
-comment6.target=void\ getHit(int)
-numComments=7
+numComments=6

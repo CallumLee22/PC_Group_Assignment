@@ -128,18 +128,4 @@ public class Player extends Actor
             currentWorld.removeObject(pickUp);
         }
     }
-        public void getHit(int damage) {
-    // Deduct health based on the damage received
-    health -= damage;
-
-    // Ensure health doesn't go below zero
-    if (health < 0) {
-        health = 0;
-    }
-    
-    // Display the updated health
-    System.out.println("Player hit! Current health: " + health);
-}
-
-    
 }
