@@ -12,8 +12,13 @@ public class Enemy extends Actor {
     private boolean hitObstacle = false;
     private int prevX, prevY;
     private boolean damaging = false;  // Declaration for damaging
-    private long now = 0;  // Declaration for now
-    private long now2 = 0;  // Declaration for now2
+    private long now;
+    private long now2;
+
+    // Constructor
+    public Enemy() {
+        now = new Date().getTime();  // Initialize 'now' in the constructor
+    }
 
     public void act() {
         followPlayer();
