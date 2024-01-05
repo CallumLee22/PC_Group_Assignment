@@ -123,7 +123,7 @@ public class Level1 extends World
         {
             getRandomGround(590, y);
         }
-        for (int x = 605; x < 740; x += 15)
+        for (int x = 605; x < 755; x += 15)
         {
             getRandomGround(x, 65);
         }

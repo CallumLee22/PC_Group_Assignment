@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=TitleScreen
-comment0.text=\r\n\ Displays\ the\ title\ screen\ and\ character\ select\ screen\r\n\ \r\n\ @Callum\ Lee\r\n\ @5/12/23\r\n
+comment0.text=\n\ Displays\ the\ title\ screen\ and\ character\ select\ screen\n\ \n\ @Callum\ Lee\n\ @5/12/23\n
 comment1.params=
 comment1.target=TitleScreen()
 numComments=2
