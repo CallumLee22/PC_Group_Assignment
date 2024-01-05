@@ -14,6 +14,7 @@ public class Enemy extends Actor {
     private boolean damaging = false;  // Declaration for damaging
     private long now;
     private long now2;
+    public int health = 100;
 
     // Constructor
     public Enemy() {
@@ -28,6 +29,11 @@ public class Enemy extends Actor {
         if (!damaging && (now2 > now + 1000)) {
             damage();
             damaging = false;
+        }
+
+        if (health <= 0)
+        {
+            getWorld().removeObject(this);
         }
     }
 
