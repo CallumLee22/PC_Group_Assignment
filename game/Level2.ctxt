@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Level2
-comment0.text=\r\n\ Level\ 2\ is\ a\ night\ version\ of\ level\ 1\r\n\ \r\n\ @author\ Callum\ Lee\ \r\n\ @version\ 12/12/2023\r\n
+comment0.text=\n\ Level\ 2\ is\ a\ night\ version\ of\ level\ 1\n\ \n\ @author\ Callum\ Lee\ \n\ @version\ 12/12/2023\n
 comment1.params=characterNum
 comment1.target=Level2(int)
 comment2.params=x\ y
