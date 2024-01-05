@@ -128,7 +128,7 @@ public class Level3 extends World
         
         spawnHealthPickUps();
         
-        //addEnemy(5);
+        addEnemy(5);
     }
     
     private void addEnemy(int numberOfEnemy)

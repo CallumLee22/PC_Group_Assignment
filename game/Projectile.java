@@ -59,9 +59,9 @@ public class Projectile extends Actor
         if (
         isAtEdge() || isTouching(DayFence1.class) || 
         isTouching(DayChurch.class) || isTouching(DayHouse1.class) ||
-        isTouching(DayHouse2.class) || isTouching(DayFence1.class) ||
-        isTouching(DayChurch.class) || isTouching(DayHouse1.class) ||
-        isTouching(DayHouse2.class) || isTouching(Enemy.class)
+        isTouching(DayHouse2.class) || isTouching(NightFence1.class) ||
+        isTouching(NightChurch.class) || isTouching(NightHouse1.class) ||
+        isTouching(NightHouse2.class) || isTouching(Enemy.class)
         )
         {
             getWorld().removeObject(this);
