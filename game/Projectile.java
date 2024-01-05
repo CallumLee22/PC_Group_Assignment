@@ -55,12 +55,13 @@ public class Projectile extends Actor
     public void act()
     {
         move(speed, direction);
+        damage();
         if (
         isAtEdge() || isTouching(DayFence1.class) || 
         isTouching(DayChurch.class) || isTouching(DayHouse1.class) ||
         isTouching(DayHouse2.class) || isTouching(DayFence1.class) ||
         isTouching(DayChurch.class) || isTouching(DayHouse1.class) ||
-        isTouching(DayHouse2.class)
+        isTouching(DayHouse2.class) || isTouching(Enemy.class)
         )
         {
             getWorld().removeObject(this);
@@ -81,5 +82,13 @@ public class Projectile extends Actor
             y += speed;
         }
         setLocation(x, y);
+    }
+    
+    private void damage()
+    {
+        Enemy enemy = (Enemy) getOneIntersectingObject(Enemy.class);
+        if(enemy != null) {
+            enemy.health -= 100;
+        }
     }
 }
