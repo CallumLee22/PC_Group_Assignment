@@ -273,6 +273,19 @@ public class Level1 extends World
     public void act()
     {
         checkHealth();
+        
+        if (getObjects(Enemy.class).size() == 0)
+        {
+            DayTextBox textBox = new DayTextBox("title");
+            GreenfootImage image = textBox.getImage();
+            image.scale(image.getWidth(), image.getHeight() / 2);
+            image.drawImage(new GreenfootImage("Get back to your house!", 40, Color.WHITE, null), 120, 20);
+            addObject(textBox, 375, 65);
+            if(player.getX() <= 60 && player.getX() >= 40 && player.getY() <= 360 && player.getY() >= 340)
+            {
+                Greenfoot.setWorld(new Level2(characterNum));
+            }
+        }
     }
     
     private void checkHealth()

@@ -127,23 +127,71 @@ public class Level3 extends World
         addObject(heart5, 140, 20);
         
         spawnHealthPickUps();
+        
+        addEnemy(5);
     }
     
-        public void act()
+    private void addEnemy(int numberOfEnemy)
+    {
+        for (int i = 0; i < numberOfEnemy; i++)
+        {
+            int x = Greenfoot.getRandomNumber(getWidth());
+            int y = Greenfoot.getRandomNumber(getHeight());
+            addObject(new Enemy(), x, y);
+        }
+    }
+    
+    public void act()
     {
         checkHealth();
         
         //Game ending
-        if (player.getX() == 660 && player.getY() == 250)
+        if (getObjects(Enemy.class).size() == 0)
         {
-            Greenfoot.setWorld(new EndScreen());
+            DayTextBox textBox = new DayTextBox("title");
+            GreenfootImage image = textBox.getImage();
+            image.scale(image.getWidth(), image.getHeight() / 2);
+            image.drawImage(new GreenfootImage("Seek safety in the church!", 40, Color.WHITE, null), 100, 20);
+            addObject(textBox, 375, 65);
+            if (player.getX() <= 680 && player.getX() >= 640 && player.getY() <= 270 && player.getY() >= 230)
+            {
+                Greenfoot.setWorld(new EndScreen());
+            }
         }
     }
     
     private void checkHealth()
     {
         // Change heart images to reflect the player's health
-        if (player.health == 90)
+        if (player.health == 100)
+        {
+          heart5.setImage("whole_heart.png");
+            GreenfootImage heart5Image = heart5.getImage();
+            heart5Image.scale(heart5Image.getWidth() * 2, heart5Image.getHeight() * 2);
+            heart5.setImage(heart5Image);
+            
+            heart4.setImage("whole_heart.png");
+            GreenfootImage heart4Image = heart4.getImage();
+            heart4Image.scale(heart4Image.getWidth() * 2, heart4Image.getHeight() * 2);
+            heart4.setImage(heart4Image);
+            
+            heart3.setImage("whole_heart.png");
+            GreenfootImage heart3Image = heart3.getImage();
+            heart3Image.scale(heart3Image.getWidth() * 2, heart3Image.getHeight() * 2);
+            heart3.setImage(heart3Image);
+            
+            heart2.setImage("whole_heart.png");
+            GreenfootImage heart2Image = heart2.getImage();
+            heart2Image.scale(heart2Image.getWidth() * 2, heart2Image.getHeight() * 2);
+            heart2.setImage(heart2Image);
+            
+            heart1.setImage("whole_heart.png");
+            GreenfootImage heart1Image = heart1.getImage();
+            heart1Image.scale(heart1Image.getWidth() * 2, heart1Image.getHeight() * 2);
+            heart1.setImage(heart1Image);  
+        }
+        
+        else if (player.health == 90)
         {
             heart5.setImage("half_heart.png");
             GreenfootImage heart5Image = heart5.getImage();
